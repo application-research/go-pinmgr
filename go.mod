@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/ipfs/go-cid v0.2.0
 	github.com/ipfs/go-log/v2 v2.5.1
-	github.com/libp2p/go-libp2p-core v0.16.1
+	github.com/libp2p/go-libp2p-core v0.15.1
 	github.com/pkg/errors v0.9.1
 )
 
