@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/application-research/estuary/pinner/types"
+	"github.com/application-research/go-pinmgr/types"
 	"github.com/ipfs/go-cid"
 	logging "github.com/ipfs/go-log/v2"
 	"github.com/libp2p/go-libp2p-core/peer"
@@ -177,7 +177,7 @@ func (pm *PinManager) doPinning(op *PinningOperation) error {
 	}); err != nil {
 		op.fail(err)
 		pm.StatusChangeFunc(op.ContId, "failed")
-		return errors.Wrap(err, "shuttle RunPinFunc failed")
+		return errors.Wrap(err, "RunPinFunc failed")
 	}
 	op.complete()
 	pm.StatusChangeFunc(op.ContId, "pinned")
