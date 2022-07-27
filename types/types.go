@@ -26,23 +26,14 @@ type IpfsPin struct {
 
 type IpfsPinStatus struct {
 	Requestid string                 `json:"requestid"`
-	Status    string                 `json:"status"`
-	Created   time.Time              `json:"created"`
-	Pin       IpfsPin                `json:"pin"`
-	Delegates []string               `json:"delegates"`
-	Info      map[string]interface{} `json:"info"`
-}
-
-type IpfsPinStatusResponse struct {
-	RequestID string                 `json:"requestid"`
 	Status    PinningStatus          `json:"status"`
 	Created   time.Time              `json:"created"`
+	Pin       IpfsPin                `json:"pin"`
 	Delegates []string               `json:"delegates"`
 	Info      map[string]interface{} `json:"info"`
-	Pin       IpfsPin                `json:"pin"`
 }
 
-type IpfsListPinStatusResponse struct {
-	Count   int                      `json:"count"`
-	Results []*IpfsPinStatusResponse `json:"results"`
+type IpfsListPinStatus struct {
+	Count   int              `json:"count"`
+	Results []*IpfsPinStatus `json:"results"`
 }
