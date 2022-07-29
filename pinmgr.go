@@ -71,7 +71,7 @@ type PinningOperation struct {
 	Peers []peer.AddrInfo
 	Meta  map[string]interface{}
 
-	Status string
+	Status types.PinningStatus
 
 	UserId  uint
 	ContId  uint
@@ -112,7 +112,7 @@ func (po *PinningOperation) complete() {
 	po.Status = "pinned"
 }
 
-func (po *PinningOperation) SetStatus(st string) {
+func (po *PinningOperation) SetStatus(st types.PinningStatus) {
 	po.lk.Lock()
 	defer po.lk.Unlock()
 
